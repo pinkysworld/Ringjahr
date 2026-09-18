@@ -1,0 +1,346 @@
+/* Ringjahr – gemeinsames Stylesheet für alle Sprachfassungen */
+
+:root {
+  --color-bg: #F4EBDC;
+  --color-surface: #FDF8F0;
+  --color-text: #2A1F16;
+  --color-text-secondary: #6A5846;
+  --color-accent: #B4651A;
+  --color-border: #DCCCB3;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --max-width: 880px;
+  --radius: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #14100B;
+    --color-surface: #201A13;
+    --color-text: #F3E9DA;
+    --color-text-secondary: #B5A392;
+    --color-accent: #E0983F;
+    --color-border: #3B3025;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Kopfzeile */
+
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.main-nav a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.main-nav a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.lang-switch a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+}
+
+.lang-switch a:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Hero */
+
+.hero {
+  padding: 48px 0 32px;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.hero .tagline {
+  font-size: 1.15rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 24px;
+  max-width: 60ch;
+}
+
+.hero-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  margin-bottom: 20px;
+}
+
+/* Badge / Platzhalter-Hinweis statt App-Store-Button */
+
+.store-badge-pending {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  background-color: var(--color-surface);
+}
+
+/* Abschnitte */
+
+section {
+  padding: 32px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+section:first-of-type {
+  border-top: none;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0 0 16px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+}
+
+p {
+  margin: 0 0 14px;
+}
+
+/* Karten / Listen */
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.card-list li {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  font-size: 0.95rem;
+}
+
+.plain-list {
+  padding-left: 1.2em;
+}
+
+.plain-list li {
+  margin-bottom: 8px;
+}
+
+/* Galerie */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.gallery figure {
+  margin: 0;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.gallery figcaption {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+/* Kapitel-Liste */
+
+.chapter-list {
+  list-style: decimal;
+  padding-left: 1.4em;
+  columns: 2;
+  column-gap: 32px;
+}
+
+.chapter-list li {
+  margin-bottom: 6px;
+  break-inside: avoid;
+}
+
+@media (max-width: 480px) {
+  .chapter-list {
+    columns: 1;
+  }
+}
+
+/* Hinweisboxen */
+
+.notice {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+}
+
+/* FAQ */
+
+.faq-item {
+  margin-bottom: 22px;
+}
+
+.faq-item h3 {
+  color: var(--color-text);
+}
+
+/* Fußzeile */
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  margin-top: 32px;
+  padding: 24px 0 40px;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: var(--color-text-secondary);
+}
+
+.site-footer nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* Rechtstext-Seiten (Datenschutz, Support) */
+
+.legal h2 {
+  margin-top: 8px;
+}
+
+.legal section {
+  padding: 24px 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 32px 0 24px;
+  }
+}
