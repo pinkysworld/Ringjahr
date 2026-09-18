@@ -16,10 +16,3 @@ Live: https://minh.systems/Ringjahr/
 
 Statisches HTML ohne Build-Schritt, ohne externe Abhängigkeiten, ohne Tracking.
 Die Seite folgt dem Erscheinungsbild des Systems (`prefers-color-scheme`).
-
-## Hinweis
-
-Die Datenschutzerklärung beschreibt den aktuellen Stand: Spielstände liegen
-ausschließlich auf dem Gerät, Käufe laufen über Apple. Der Abschnitt zu Werbung
-beschreibt Google AdMob als vorgesehen — er ist vor der Veröffentlichung im App
-Store auf den dann tatsächlichen Stand zu bringen und juristisch zu prüfen.
