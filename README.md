@@ -2,7 +2,7 @@
 
 Die öffentliche Seite zum iOS-Spiel **Ringjahr**, einem Puzzle über Jahresringe.
 
-Live: https://pinkysworld.github.io/Ringjahr/
+Live: https://minh.systems/Ringjahr/
 
 ## Inhalt
 
