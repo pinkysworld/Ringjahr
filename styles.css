@@ -1,6 +1,7 @@
 /* Ringjahr – gemeinsames Stylesheet für alle Sprachfassungen */
 
 :root {
+  --hero-poster: url('assets/hero-poster.jpg');
   --color-bg: #F4EBDC;
   --color-surface: #FDF8F0;
   --color-text: #2A1F16;
@@ -152,6 +153,34 @@ a:hover {
   height: 96px;
   border-radius: 22px;
   margin-bottom: 20px;
+}
+
+.hero-clip {
+  margin: 28px 0 0;
+  max-width: 560px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(60, 40, 20, 0.18);
+}
+
+.hero-clip video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* A loop that plays itself is decoration, and decoration has to stop when the
+   reader has asked for less motion. The poster frame stays. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-clip video {
+    display: none;
+  }
+
+  .hero-clip {
+    background-image: var(--hero-poster);
+    background-size: cover;
+    aspect-ratio: 848 / 480;
+  }
 }
 
 /* Badge / Platzhalter-Hinweis statt App-Store-Button */
