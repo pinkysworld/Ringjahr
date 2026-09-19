@@ -181,19 +181,5 @@
     </nav>
   </div>
 </footer>
-<script>
-// The clip carries autoplay/muted/playsinline, which is all a browser needs.
-// Some engines still leave a video that was parsed in with the page sitting at
-// frame zero, so it gets one nudge once it can play. A browser that refuses
-// keeps showing the poster, which is the right outcome either way.
-(function () {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var v = document.querySelector('.hero-clip video');
-  if (!v) return;
-  var start = function () { var p = v.play(); if (p) { p.catch(function () {}); } };
-  v.addEventListener('canplay', start, { once: true });
-  start();
-})();
-</script>
 </body>
 </html>
